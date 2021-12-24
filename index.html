@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JINGLE JINGLE JINGLE ALL THE WAY YOU GOT ME SPINNING</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Local StyleSheet -->
+    <link href="./style.css" rel="stylesheet" />
+
+    <!--JS Files-->
+    <script src="./js/addButtons.js"></script>
+  </head>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="source`: webcam;
+    sourceWidth:1280; sourceHeight:960;
+    displayWidth: 1280; displayHeight: 960;
+    debugUIEnabled: false;"
+      gesture-detector
+      createbuttons
+    >
+      <!-- Camera -->
+      <a-entity camera></a-entity>
+
+      <a-assets>
+        <a-asset-item
+          id="crane-model"
+          src="./assets/mobile_crane_ii_wooden_toy/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <!--Pattern Marker-->
+      <a-marker
+        id="crane-marker"
+        type="pattern"
+        url="assets/T01/pattern-crane.patt"
+        cursor="rayOrigin: mouse"
+      >
+        <a-entity
+          id="crane-3D-model"
+          position="-2.3 0 0.5"
+          rotation="-90 0 0"
+          scale="5 5 5"
+          gltf-model="#crane-model"
+          gesture-handler
+          animation-mixer
+        >
+        </a-entity>
+
+        <!-- Description -->
+        <a-plane
+          position="0 0 0"
+          width="2.3"
+          height="2.5"
+          rotation="-90 0 0"
+          color="#ffffff"
+        >
+          <a-plane
+            position="0 1.1 0.1"
+            width="2.31"
+            height="0.4"
+            rotation="0 0 0"
+            color="#f4a9bb"
+          >
+            <a-entity
+              position="1.3 0 0.1"
+              rotation="0 0 0"
+              text="font:aileronsemibold;value:christmas evel aka soty lyrics;color:#290149;width: 4.5;height:3;align:left;"
+            ></a-entity>
+          </a-plane>
+
+          <a-entity
+            position="0.1 0 0.1"
+            rotation="0 0 0"
+            text="color: #6b011f; align: left; width: 2;height:5;lineHeight:50;letterSpacing:2; font: dejavu;
+               value:[Intro]
+               It's Christmas Eve
+               
+               [Verse 1: Han, Changbin, Hyunjin, Seungmin]
+               Bamsae naerin nuneun jamkkanman yeppeo
+               Nangmaneun gaeppul
+               Nunchi eomneun chadeul ttaeme geumbang saekkamaejin geo bwa
+               Geotgido ppakse nunbatbodan gaetbeol
+               Mureupkkaji da jeojeun baji
+               Jogeum geotdaga najappajim
+               Teukbyeolhan nal teukbyeolhagil
+               Byeonjildwaetji byeoril eopgil
+               Dwingguldwinggul dwinggulda nundeongiman bueotji
+               Eoje mandeun nunsarameun meoljjeongharyeona
+               A ttaga burеo
+               Kalbarame beyeo chingching
+               Brrr, ttеollineun moksori
+               Keolleopureun museun pul hana an boyeo
+               Raepada kollok-kollok-kollok gichim
+               
+               [Pre-Chorus: Lee Know, I.N]
+               Jack Frost coming for y'all, run, run
+               Ppyeokkaji sirige haneun holiday, silence
+               Teukbyeolhan geo hana eomneunde
+               Waedeul geureoke gidaryeonneunji
+               Christmas EveL
+               (Merry Christmas)
+               
+               
+               [Chorus: Felix, Bang Chan]
+               Jingle, jingle, jingle all the way
+               You got me spinning
+               Binggeulbinggeulbinggeul dolgenne
+               Bingpan wi Christmas
+               Aseuraseul
+               Udangtangtang
+               I don't need no presents
+               Crossing out X-MAS
+               
+               [Verse 2: I.N, Lee Know, Han, Changbin]
+               Chuwiman geosejyeo jangjak daesin aega tanda
+               Mikkeureon gil deoge chaneun deo makyeo ttaengkyuda gyeoura
+               Ipgimi naogo ppalgaejin ko gyeopgyeobi kkyeoibeun gonman deopgo
+               Mwoga bukkeureowoseo, ayy, gwi ttagapdorok ppalgaejyeonne
+               Pposyasineun museun nune gim kkyeotda nareum kwolliti gut pilteo (Oh)
+               O pihaega pihaega pokseol majeun paedingeul jjanaemyeon oriteo
+               Chuumyeon chupdago bunneun jyaene ttaeme nunkkoldo siryeo (Yo)
+               Yeollageun han tong an ogo daetteum ibenteu munjaman one da miwo
+               
+               [Pre-Chorus: Seungmin, Han]
+               Jack Frost coming for y'all, run, run
+               Ppyeokkaji sirige haneun holiday, silence
+               Teukbyeolhan geo hana eomneunde
+               Waedeul geureoke gidaryeonneunji
+               Christmas EveL
+               (Merry Christmas)
+               
+               
+               [Chorus: Hyunjin, Bang Chan]
+               Jingle, jingle, jingle all the way
+               You got me spinning
+               Binggeulbinggeulbinggeul dolgenne
+               Bingpan wi Christmas
+               Aseuraseul
+               Udangtangtang
+               I don't need no presents
+               Crossing out X-MAS
+               
+               [Bridge: Seungmin, I.N]
+               Salgeumsalgeum
+               Kkachibal gulttuk wiro ollaga
+               Gyro drop kung
+               Hyeonsil jagak Christmas EveL
+               
+               [Refrain: Felix, Lee Know]
+               Feliz Navidad, Feliz Navidad
+               I can feel the evil coming but Felix, never bad
+               Oneureun teukbyeolhan nal geu nugudo humchil su eopseo
+               Geurimjadeuri nal deopchyeo
+               Let me sing a Christmas song
+               
+               [Outro: All, Han]
+               Feliz Navidad (Ho, ho, ho)
+               Feliz Navidad (Christmas EveL)
+               Feliz Navidad (Ho, ho, ho)
+               Feliz Navidad (It's Christmas Eve)"
+          >
+          </a-entity>
+
+          <a-entity
+            position="-0.75 -0.8 0.1"
+            rotation="0 0 0"
+            text="color: #290149; align: center; width: 2;height:5; font: aileronsemibold;
+               value:AGE : 8 - 10yrs"
+          >
+          </a-entity>
+        </a-plane>
+      </a-marker>
+    </a-scene>
+
+    <!-- Button Main Div -->
+    <div id="button-div"></div>
+  </body>
+</html>
